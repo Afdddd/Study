@@ -1,0 +1,21 @@
+public static void main(String[] args) {
+        File file = new File("data");
+        FileInputStream fis = null;
+
+
+        try {
+            fis = new FileInputStream(file);
+            int data = fis.read();
+            System.out.println(data);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
+            if (fis != null) {
+                try {
+                    fis.close();
+                } catch (IOException e) {
+
+                }
+            }
+        }
+    }
